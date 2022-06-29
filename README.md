@@ -27,7 +27,7 @@ THEN the password is either displayed in an alert or written to the page  </br>
 ## Screenshot Of Application
 ![](Screenshot-Application.png)
 ## Screenshot of Application Deployment Live
-![](Screenshot-Live.png)
+![](Screenshot-Live.jpg)
 ## LIVE URL
 https://theothermike5544.github.io/Password-Generator/
 
