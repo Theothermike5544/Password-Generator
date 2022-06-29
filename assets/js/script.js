@@ -19,14 +19,25 @@ function generatePassword() {
 
     //prompts added to confirm user inputs on password criteria
     var confirmUppers = window.confirm("Do you want to include uppercase letters?");
-   
+    var confirmLowers = window.confirm("Do you want to include lowercase letters?");
+    var confirmNumbers = window.confirm("Do you want to include numbers?");
+    var confirmSymbols = window.confirm("Do you want to include symbols?");
 
-    // if statements executing input data for upper case test
+    // if statements executing input data for (all) case tests now
     if (confirmUppers) {
       visitorInput = visitorInput.concat(upperChars);
     }
+    if (confirmLowers) {
+      visitorInput = visitorInput.concat(lowerChars);
+    }
+    if (confirmNumbers) {
+      visitorInput = visitorInput.concat(numbers);
+    }
+    if (confirmSymbols) {
+      visitorInput = visitorInput.concat(symbols);
+    }
 
-    //Run test on Uppers in console log
+    //Run Log test on all input data
     console.log(visitorInput);
 
     // creating password test with randomizer
