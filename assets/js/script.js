@@ -8,7 +8,7 @@ function generatePassword() {
     var lowerChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
     var symbols = ["!", "#", "$", "%", "&", "@", "(", ")", "*", "+", ",", "-", ".", "/", "=", "^", "_", "`", "~"];
-    var siteChoice = [];
+    var visitorInput = [];
 
     // Prompts for confirming what length and chars / symbols / numbers to use
     var charLength = window.prompt("How long would you like your password? Choose a length from 8 - 128 characters long!")
@@ -16,7 +16,30 @@ function generatePassword() {
       window.alert("The required password must be between 8 and 128 characters in length. Please input a validated response and try again!");
       return generatePassword();
     }
+
+    //prompts added to confirm user inputs on password criteria
+    var confirmUppers = window.confirm("Do you want to include uppercase letters?");
+   
+
+    // if statements executing input data for upper case test
+    if (confirmUppers) {
+      visitorInput = visitorInput.concat(upperChars);
+    }
+
+    //Run test on Uppers in console log
+    console.log(visitorInput);
+
+    // creating password test with randomizer
+    var passNew = "";
+    for (var i = 0; i < charLength; i++) {
+          var randomizeChar = Math.floor(Math.random() * visitorInput.length);
+          passNew = passNew + visitorInput[randomizeChar];
+    }
+    
+    //password return of new password
+    return passNew;
 }
+  
 
 // Write password to the #password input
 function writePassword() {
